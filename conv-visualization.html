@@ -1,102 +1,26 @@
-<!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Conversation Rating Summary</title>
-        
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;}
-        .container {
-            width: 90%;
-            margin: 50px auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9em;
-            min-width: 400px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px 15px;
-            text-align: left;
-            word-wrap: break-word;
-        }
-        th {
-            background-color: #009879;
-            color: #ffffff;
-            font-weight: bold;
-        }
-        tr:nth-child(even) {
-            background-color: #f3f3f3; /* Light gray for even rows */
-        }
-        tr:hover {
-            background-color: #e6e6e6; /* Slightly darker on hover */
-        }
-        .note {
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: #666;
-        }
-    </style>
-    
-    </head>
-    <body>
-        <div class="container">
-            <h2>Conversation Rating and Label Summary</h2>
-            <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Conversation ID</th>
-      <th>Average Overall Rating</th>
-      <th>Human-Annotated Label</th>
-      <th>GPT-5.1 Label</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>b747a699-2f14-4ee4-aae4-8d31edbfd330</td>
-      <td>3.60</td>
-      <td>SAT</td>
-      <td>SAT</td>
-    </tr>
-    <tr>
-      <td>98e8f453-4860-4797-bda0-6c44ddeef473</td>
-      <td>3.20</td>
-      <td>SAT</td>
-      <td>SAT</td>
-    </tr>
-    <tr>
-      <td>c3600ae8-cb32-4db7-b4f4-3dd3e93fce68</td>
-      <td>3.00</td>
-      <td>Neutral</td>
-      <td>SAT</td>
-    </tr>
-    <tr>
-      <td>1c8c4343-7dc9-40a8-8828-4aeefd5906bd</td>
-      <td>2.50</td>
-      <td>DSAT</td>
-      <td>SAT</td>
-    </tr>
-    <tr>
-      <td>2f09b7b3-c2b2-4d91-b05a-7c0516444fd3</td>
-      <td>2.67</td>
-      <td>DSAT</td>
-      <td>SAT</td>
-    </tr>
-  </tbody>
-</table>
-            <p class="note"><strong>Note:</strong> Ratings are on a scale, typically 1 (least satisfied/DSAT) to 5 (most satisfied/SAT). The 'Average Overall Rating' is the mean of the scores provided by individual human annotators.</p>
+...
+        <table>
+            <thead>
+                <tr>
+                    <th>Conversation ID</th>
+                    <th>Average Overall Rating</th>
+                    <th>Human-Annotated Label</th>
+                    <th>GPT-5.1 Label</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>b747a699-2f14-4ee4-aae4-8d31edbfd330</td>
+                    <td>3.60</td>
+                    <td>SAT</td>
+                    <td>SAT</td>
+                    <td><button class='view-btn' id='btn-b747a699-2f14-4ee4-aae4-8d31edbfd330' onclick="toggleConversation('b747a699-2f14-4ee4-aae4-8d31edbfd330')">View Conversation</button></td>
+                </tr>
+</tbody>
+        </table>
+...
+        <div id='detail-b747a699-2f14-4ee4-aae4-8d31edbfd330' class='conversation-detail'>
+            <h4>Conversation ID: b747a699-2f14-4ee4-aae4-8d31edbfd330</h4>
+            <div class="conversation-log"><div class="user-message"><strong>User:</strong> I'm looking for a place to dine in the moderate price range in the centre, please.</div><div class="assistant-message"><strong>Assistant:</strong> Yes I have Asian, British, International, European and Italian to name a few. Any preferences?</div>...</div>
         </div>
-    </body>
-    </html>
