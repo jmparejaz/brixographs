@@ -370,6 +370,8 @@
             <button class="filter-btn" data-filter="SAT">Satisfied</button>
             <button class="filter-btn" data-filter="Neutral">Neutral</button>
             <button class="filter-btn" data-filter="DSAT">Dissatisfied</button>
+            <button class="filter-btn" data-filter="GPT_RIGHT">GPT Correct</button>
+            <button class="filter-btn" data-filter="GPT_WRONG">GPT Wrong</button>
             <input type="text" class="search-box" placeholder="Search conversations..." id="searchBox">
         </div>
         
@@ -453,14 +455,30 @@
                 const label = data.aggregated_labels && data.aggregated_labels[index]
                     ? data.aggregated_labels[index].conversation_label
                     : data.label[index];
+
                 const gptResponse = data["gpt-5.1_response"] ? data["gpt-5.1_response"][index] : "N/A";
-                const promptTokens = data.prompt_tokens ? data.prompt_tokens[index] : 0;
-                const completionTokens = data.completion_tokens ? data.completion_tokens[index] : 0;
+
+                const convLabel = label;
+                const isGptRight = (convLabel === gptResponse);
+
                 const firstMessage = conversation[0]?.content || '';
                 const turnCount = Math.ceil(conversation.length / 2);
-                
-                if (currentFilter !== 'all' && label !== currentFilter) return;
-                if (searchTerm && !conversation.some(m => m.content.toLowerCase().includes(searchTerm.toLowerCase()))) return;
+                const promptTokens = data.prompt_tokens ? data.prompt_tokens[index] : 0;
+                const completionTokens = data.completion_tokens ? data.completion_tokens[index] : 0;
+
+                // LABEL filters (SAT / Neutral / DSAT)
+                if (['SAT', 'Neutral', 'DSAT'].includes(currentFilter)) {
+                    if (label !== currentFilter) return;
+                }
+
+                // GPT correctness filters
+                if (currentFilter === 'GPT_RIGHT' && !isGptRight) return;
+                if (currentFilter === 'GPT_WRONG' && isGptRight) return;
+
+                // Text search filter
+                if (searchTerm && !conversation.some(m => m.content.toLowerCase().includes(searchTerm.toLowerCase()))) {
+                    return;
+                }
                 
                 visibleCount++;
                 
