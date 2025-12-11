@@ -414,9 +414,13 @@
         }
         
         function renderStats() {
-            const sat = data.label.filter(l => l === 'SAT').length;
-            const neutral = data.label.filter(l => l === 'Neutral').length;
-            const dsat = data.label.filter(l => l === 'DSAT').length;
+            const convLabels = data.aggregated_labels
+                ? data.aggregated_labels.map(x => x.conversation_label)
+                : data.label;
+
+            const sat = convLabels.filter(l => l === 'SAT').length;
+            const neutral = convLabels.filter(l => l === 'Neutral').length;
+            const dsat = convLabels.filter(l => l === 'DSAT').length;
             const total = data.messages.length;
             
             document.getElementById('statsBar').innerHTML = `
@@ -446,7 +450,9 @@
             let visibleCount = 0;
             
             data.messages.forEach((conversation, index) => {
-                const label = data.label[index];
+                const label = data.aggregated_labels && data.aggregated_labels[index]
+                    ? data.aggregated_labels[index].conversation_label
+                    : data.label[index];
                 const gptResponse = data["gpt-5.1_response"] ? data["gpt-5.1_response"][index] : "N/A";
                 const promptTokens = data.prompt_tokens ? data.prompt_tokens[index] : 0;
                 const completionTokens = data.completion_tokens ? data.completion_tokens[index] : 0;
@@ -505,6 +511,9 @@
             const promptTokens = data.prompt_tokens ? data.prompt_tokens[index] : 0;
             const completionTokens = data.completion_tokens ? data.completion_tokens[index] : 0;
             const convId = data.conversation_id ? data.conversation_id[index] : `conv-${index}`;
+            const convLabel = aggLabels && aggLabels.conversation_label
+                ? aggLabels.conversation_label
+                : data.label[index];
             
             let turnIndex = 0;
             let messagesHtml = '';
@@ -544,7 +553,7 @@
                         </div>
                         <div class="meta-item">
                             <div class="meta-label">Overall Label</div>
-                            <div class="meta-value"><span class="badge ${getBadgeClass(aggLabels?.conversation_label || data.label[index])}">${aggLabels?.conversation_label || data.label[index]}</span></div>
+                            <div class="meta-value"><span class="badge ${getBadgeClass(convLabel)}">${convLabel}</span></div>
                         </div>
                         <div class="meta-item">
                             <div class="meta-label">GPT Response</div>
