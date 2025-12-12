@@ -69,7 +69,7 @@
         .stat-value { font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 0.25rem; }
         .stat-label { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; color: var(--text-sub); letter-spacing: 0.05em; }
 
-        /* Filters & Search */
+        /* Controls */
         .controls {
             display: flex;
             gap: 1rem;
@@ -116,11 +116,30 @@
             overflow: hidden;
         }
         
-        table { width: 100%; border-collapse: collapse; text-align: left; }
+        table { width: 100%; border-collapse: collapse; text-align: left; table-layout: fixed; }
         th { background: #f9fafb; padding: 1rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-sub); font-weight: 600; border-bottom: 1px solid var(--border); }
-        td { padding: 1rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+        td { padding: 1rem; border-bottom: 1px solid var(--border); vertical-align: top; } /* Changed to top alignment */
         tr:hover td { background: #f9fafb; cursor: pointer; }
         tr.expanded td { background: #eff6ff; }
+
+        /* Topic Badges */
+        .topic-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+        }
+        
+        .topic-badge {
+            display: inline-block;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
 
         /* Badges */
         .badge {
@@ -150,7 +169,6 @@
             gap: 0;
         }
         
-        /* Sidebar in Detail */
         .detail-sidebar {
             padding: 2rem;
             border-right: 1px solid var(--border);
@@ -212,7 +230,6 @@
             border-bottom-right-radius: 2px;
         }
         
-        /* Sentiment colored borders for user */
         .sentiment-Curious { border-left: 4px solid #60a5fa; }
         .sentiment-Gratitude { border-left: 4px solid #34d399; }
         .sentiment-Frustration { border-left: 4px solid #f87171; }
@@ -234,7 +251,6 @@
             font-weight: 600;
         }
 
-        /* Events in Timeline */
         .timeline-event {
             text-align: center;
             margin: 1.5rem 0;
@@ -293,13 +309,13 @@
         <table>
             <thead>
                 <tr>
-                    <th width="50"></th>
-                    <th width="100">ID</th>
-                    <th>First Message</th>
-                    <th width="120">Outcome</th>
-                    <th width="120">Effort</th>
-                    <th width="100">Turns</th>
-                    <th width="200">Topics</th>
+                    <th width="40"></th>
+                    <th width="80">ID</th>
+                    <th width="35%">First Message</th>
+                    <th width="100">Outcome</th>
+                    <th width="80">Effort</th>
+                    <th width="80">Turns</th>
+                    <th>Topics</th>
                 </tr>
             </thead>
             <tbody id="tableBody"></tbody>
@@ -349,15 +365,15 @@
                 <div class="stat-label">Total Conversations</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value" style="color: var(--sat-color)">${((resolved/total)*100).toFixed(0)}%</div>
+                <div class="stat-value" style="color: var(--sat-color)">${total > 0 ? ((resolved/total)*100).toFixed(0) : 0}%</div>
                 <div class="stat-label">Resolution Rate</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value" style="color: var(--primary)">${((lowEffort/total)*100).toFixed(0)}%</div>
+                <div class="stat-value" style="color: var(--primary)">${total > 0 ? ((lowEffort/total)*100).toFixed(0) : 0}%</div>
                 <div class="stat-label">Low Effort Rate</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">${(totalTurns/total).toFixed(1)}</div>
+                <div class="stat-value">${total > 0 ? (totalTurns/total).toFixed(1) : 0}</div>
                 <div class="stat-label">Avg Turns / Conv</div>
             </div>
         `;
@@ -371,13 +387,22 @@
         const searchLower = search.toLowerCase();
 
         data.forEach((row, index) => {
-            // Extract Metrics
             const metrics = row.analysis?.metrics || {};
             const outcome = metrics.outcome?.label || 'Unknown';
             const effort = metrics.effort_score || 'Unknown';
-            const topics = row.analysis?.topics?.map(t => t.topic_name).join(', ') || '';
             const firstMsg = row.messages[0]?.content || '';
             const convId = row.conversation_id || 'Unknown';
+            
+            // Process Topics into Badges
+            const topicsRaw = row.analysis?.topics || [];
+            let topicsHtml = '';
+            if (topicsRaw.length > 0) {
+                topicsHtml = '<div class="topic-container">' + 
+                    topicsRaw.map(t => `<span class="topic-badge">${t.topic_name}</span>`).join('') +
+                    '</div>';
+            } else {
+                topicsHtml = '<span style="color:var(--text-sub);">-</span>';
+            }
 
             // Filtering
             if (currentFilter !== 'all' && outcome !== currentFilter) return;
@@ -385,19 +410,18 @@
 
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td style="text-align:center; color: var(--text-sub);">▼</td>
+                <td style="text-align:center; color: var(--text-sub); vertical-align: middle;">▼</td>
                 <td><code>${convId.substring(0,6)}</code></td>
                 <td><div style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:400px; color: var(--text-sub)">${firstMsg}</div></td>
                 <td><span class="badge ${outcome === 'Resolved' ? 'badge-resolved' : 'badge-unresolved'}">${outcome}</span></td>
                 <td><span class="badge badge-gray">${effort}</span></td>
                 <td>${row.messages.length}</td>
-                <td style="font-size: 0.85rem; color: var(--text-sub)">${topics.substring(0, 30)}${topics.length>30?'...':''}</td>
+                <td>${topicsHtml}</td>
             `;
             
             tr.onclick = () => toggleDetail(index, tr);
             tbody.appendChild(tr);
 
-            // Detail Row
             const detailTr = document.createElement('tr');
             detailTr.innerHTML = `<td colspan="7" style="padding:0;"><div class="detail-view" id="detail-${index}"></div></td>`;
             tbody.appendChild(detailTr);
@@ -427,7 +451,7 @@
         const perTurn = analysis.per_turn || [];
         const events = analysis.events || [];
 
-        // Sidebar Content
+        // Sidebar
         let entityHtml = '';
         if (entities.length > 0) {
             entities.forEach(e => {
@@ -441,11 +465,10 @@
             entityHtml = '<div style="color:var(--text-sub); font-style:italic;">No entities detected</div>';
         }
 
-        // Chat Content
+        // Chat
         let chatHtml = '';
-        
         conv.messages.forEach((msg, msgIndex) => {
-            // Find Events occurring at this turn
+            // Events
             const turnEvents = events.filter(e => e.turn_index === msgIndex);
             turnEvents.forEach(e => {
                 let pClass = 'neutral';
@@ -458,7 +481,7 @@
                     </div>`;
             });
 
-            // Find Sentiment/Analysis for this turn
+            // Sentiment
             const turnAnalysis = perTurn.find(pt => pt.turn_index === msgIndex) || {};
             const sentiment = turnAnalysis.user_sentiment || 'Neutral';
             const isUser = msg.role === 'user';
@@ -510,7 +533,6 @@
         return '#9ca3af';
     }
 
-    // Start
     init();
 </script>
 
