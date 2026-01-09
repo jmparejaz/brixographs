@@ -490,7 +490,7 @@
                 qualitySum += d.judge.accuracy_score;
                 qualityCount += 1;
             }
-        });
+        }));
 
         const avgQuality = qualityCount > 0 ? (qualitySum / qualityCount).toFixed(1) : 'N/A';
 
@@ -602,7 +602,7 @@
             const detailTr = document.createElement('tr');
             detailTr.innerHTML = `<td colspan="8" style="padding:0;"><div class="detail-view" id="detail-${index}"></div></td>`;
             tbody.appendChild(detailTr);
-        });
+        }));
     }
 
     function toggleDetail(index, tr) {
@@ -639,7 +639,7 @@
                         <div class="entity-key">${e.type}</div>
                         <div class="entity-val">${e.value}</div>
                     </div>`;
-            });
+            }));
         } else {
             entityHtml = '<div style="color:var(--text-sub); font-style:italic;">No entities detected</div>';
         }
@@ -706,6 +706,15 @@
             const turnAnalysis = perTurn.find(pt => pt.turn_index === msgIndex) || {};
             const sentiment = turnAnalysis.user_sentiment || 'Neutral';
             const isUser = msg.role === 'user';
+
+            let messageContentHtml = msg.type === 'tool_code' && msg.tool_code
+                ? `
+                    <div class="tool-code-block">
+                        <div class="tool-code-name">⚙️ <strong>${msg.tool_code.name}</strong></div>
+                        <pre class="tool-code-args"><code>${JSON.stringify(msg.tool_code.arguments, null, 2)}</code></pre>
+                    </div>
+                  `
+                : `<div>${msg.content}</div>`;
             
             chatHtml += `
                 <div class="message-row ${msg.role}" id="msg-${index}-${msgIndex}">
@@ -715,16 +724,7 @@
                             <span>${msg.role}</span>
                             ${isUser ? `<span style="color:${getSentimentColor(sentiment)}">${sentiment}</span>` : ''}
                         </div>
-                        ${
-                            msg.type === 'tool_code' && msg.tool_code
-                            ? `
-                                <div class="tool-code-block">
-                                    <div class="tool-code-name">⚙️ <strong>${msg.tool_code.name}</strong></div>
-                                    <pre class="tool-code-args"><code>${JSON.stringify(msg.tool_code.arguments, null, 2)}</code></pre>
-                                </div>
-                              `
-                            : `<div>${msg.content}</div>`
-                        }
+                        ${messageContentHtml}
                     </div>
                 </div>
             `;
