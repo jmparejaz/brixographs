@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Conversation Analytics Dashboard</title>
+        <title>Conversation Analytics Dashboard v2</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://unpkg.com/lucide@latest"></script>
         <style>
@@ -26,8 +26,8 @@
         <div class="max-w-7xl mx-auto">
             <header class="mb-8 flex items-center justify-between">
                 <div>
-                    <h1 class="text-2xl font-bold text-slate-800">Golden Conversations</h1>
-                    <p class="text-sm text-slate-500">Analytics Review Dashboard</p>
+                    <h1 class="text-2xl font-bold text-slate-800">Golden Conversations v2</h1>
+                    <p class="text-sm text-slate-500">Analytics Review Dashboard (New Format)</p>
                 </div>
                 <div class="text-sm font-medium bg-white px-4 py-2 rounded-lg border border-slate-200">
                     Total: <span class="text-indigo-600 font-bold">4</span> Conversations
@@ -46,9 +46,9 @@
                             <span class="text-xs text-slate-400 font-mono">#conv_0</span>
                         </div>
                         <div class="flex gap-3 text-xs text-slate-500 mt-1">
-                            <span class="flex items-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> Tue, Jan 6</span>
+                            <span class="flex items-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> Fri, Jan 9</span>
                             <span class="flex items-center"><i data-lucide="clock" class="w-3 h-3 mr-1"></i> 0 min</span>
-                            <span class="flex items-center"><i data-lucide="message-circle" class="w-3 h-3 mr-1"></i> 23 messages</span>
+                            <span class="flex items-center"><i data-lucide="message-circle" class="w-3 h-3 mr-1"></i> 19 messages</span>
                             <span class="flex items-center text-green-600 font-medium"><i data-lucide="check-circle" class="w-3 h-3 mr-1"></i> Resolved</span>
                             <span class="flex items-center text-orange-500 font-medium"><i data-lucide="zap" class="w-3 h-3 mr-1"></i> Medium Effort</span>
                         </div>
@@ -58,7 +58,7 @@
             </summary>
 
             <div class="p-6 border-t border-slate-100 bg-slate-50/50">
-                <!-- ANALYTICS HEADER (MATCHING IMAGE) -->
+                <!-- ANALYTICS HEADER -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
                     <!-- Events -->
                     <div class="bg-white p-3 rounded border border-slate-200 shadow-sm relative pt-6">
@@ -66,7 +66,7 @@
                             <i data-lucide="clipboard-list" class="w-3 h-3 mr-1"></i> Events
                         </div>
                         <div class="flex flex-wrap gap-1.5 mt-1">
-                            <a href="#conv_0_turn_0" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Conversation Start</a> <a href="#conv_0_turn_0" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Intent Detected</a> <a href="#conv_0_turn_5" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Unresolved</a> <a href="#conv_0_turn_12" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Successful Resolution</a> <a href="#conv_0_turn_12" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Topic Switch</a> <a href="#conv_0_turn_21" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Successful Resolution</a> <a href="#conv_0_turn_21" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Completed Conversation</a>
+                            <a href="#conv_0_turn_0" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Issue: Misunderstanding</a> <a href="#conv_0_turn_11" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Win: Quick Resolution</a> <a href="#conv_0_turn_14" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Win: Successful Resolution</a>
                         </div>
                     </div>
                     <!-- Sentiment -->
@@ -74,7 +74,7 @@
                         <div class="absolute top-1 left-2 flex items-center text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
                             <i data-lucide="smile" class="w-3 h-3 mr-1"></i> Sentiment
                         </div>
-                        <div class="flex flex-wrap gap-1.5 mt-1"><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/23 Frustration</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/23 Satisfaction</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>2/23 Informational</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/23 Disappointment</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/23 Curious</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/23 Confusion</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div></div>
+                        <div class="flex flex-wrap gap-1.5 mt-1"><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/19 Disappointed</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>2/19 Neutral</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/19 Confused</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/19 Frustrated</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>2/19 Satisfied</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div></div>
                     </div>
                     <!-- Goals -->
                     <div class="col-span-1 md:col-span-2 bg-white p-3 rounded border border-slate-200 shadow-sm relative pt-6">
@@ -82,8 +82,8 @@
                             <i data-lucide="shield-check" class="w-3 h-3 mr-1"></i> Goals
                         </div>
                         <div class="flex flex-wrap gap-2 mt-1">
-                            <a href="#conv_0_turn_0" class="px-2 py-1 rounded bg-indigo-600 text-white text-[10px] font-bold shadow-sm hover:bg-indigo-700">★ Fix Content Generation Error</a>
-                            <a href="#conv_0_turn_0" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">View Usage Metrics</a> <a href="#conv_0_turn_17" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Schedule Automated Generation</a>
+                            <a href="#conv_0_turn_0" class="px-2 py-1 rounded bg-indigo-600 text-white text-[10px] font-bold shadow-sm hover:bg-indigo-700">★ View Usage Metrics</a>
+                            <a href="#conv_0_turn_0" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Fix Content Generation Error</a> <a href="#conv_0_turn_2" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Other</a> <a href="#conv_0_turn_14" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Workflow & Automation</a>
                         </div>
                     </div>
                 </div>
@@ -104,9 +104,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Disappointment</div>
-                        <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix Content Generation Error</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: View Usage Metrics</div>
-                        <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Conversation Start</div> <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Intent Detected</div>
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Disappointed</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: View Usage Metrics</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix Content Generation Error</div> <div class="px-2 py-0.5 rounded bg-amber-500 text-white text-[9px] font-black uppercase">Issue: Misunderstanding</div>
                     </div>
                 </div>
             </div>
@@ -125,8 +123,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -144,9 +140,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Informational</div>
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Neutral</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Other</div>
                     </div>
                 </div>
             </div>
@@ -165,8 +159,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -184,9 +176,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Confused</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix Content Generation Error</div>
                     </div>
                 </div>
             </div>
@@ -204,9 +194,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Confusion</div>
                         
-                        <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Unresolved</div>
                     </div>
                 </div>
             </div>
@@ -224,9 +212,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Frustrated</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix Content Generation Error</div>
                     </div>
                 </div>
             </div>
@@ -245,8 +231,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -264,9 +248,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Neutral</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: View Usage Metrics</div>
                     </div>
                 </div>
             </div>
@@ -284,8 +266,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Frustration</div>
-                        
                         
                     </div>
                 </div>
@@ -305,8 +285,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -324,9 +302,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Satisfied</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: View Usage Metrics</div> <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Win: Quick Resolution</div>
                     </div>
                 </div>
             </div>
@@ -345,8 +321,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Successful Resolution</div> <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Topic Switch</div>
                     </div>
                 </div>
             </div>
@@ -364,8 +338,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Informational</div>
-                        
                         
                     </div>
                 </div>
@@ -384,9 +356,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Satisfied</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Workflow & Automation</div> <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Win: Successful Resolution</div>
                     </div>
                 </div>
             </div>
@@ -404,8 +374,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -425,8 +393,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -444,8 +410,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Curious</div>
-                        <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Schedule Automated Generation</div>
                         
                     </div>
                 </div>
@@ -465,8 +429,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -485,11 +447,11 @@
                             <span class="text-xs text-slate-400 font-mono">#conv_1</span>
                         </div>
                         <div class="flex gap-3 text-xs text-slate-500 mt-1">
-                            <span class="flex items-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> Tue, Jan 6</span>
+                            <span class="flex items-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> Fri, Jan 9</span>
                             <span class="flex items-center"><i data-lucide="clock" class="w-3 h-3 mr-1"></i> 0 min</span>
-                            <span class="flex items-center"><i data-lucide="message-circle" class="w-3 h-3 mr-1"></i> 18 messages</span>
+                            <span class="flex items-center"><i data-lucide="message-circle" class="w-3 h-3 mr-1"></i> 13 messages</span>
                             <span class="flex items-center text-green-600 font-medium"><i data-lucide="check-circle" class="w-3 h-3 mr-1"></i> Resolved</span>
-                            <span class="flex items-center text-orange-500 font-medium"><i data-lucide="zap" class="w-3 h-3 mr-1"></i> Low Effort</span>
+                            <span class="flex items-center text-orange-500 font-medium"><i data-lucide="zap" class="w-3 h-3 mr-1"></i> Medium Effort</span>
                         </div>
                     </div>
                 </div>
@@ -497,7 +459,7 @@
             </summary>
 
             <div class="p-6 border-t border-slate-100 bg-slate-50/50">
-                <!-- ANALYTICS HEADER (MATCHING IMAGE) -->
+                <!-- ANALYTICS HEADER -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
                     <!-- Events -->
                     <div class="bg-white p-3 rounded border border-slate-200 shadow-sm relative pt-6">
@@ -505,7 +467,7 @@
                             <i data-lucide="clipboard-list" class="w-3 h-3 mr-1"></i> Events
                         </div>
                         <div class="flex flex-wrap gap-1.5 mt-1">
-                            <a href="#conv_1_turn_0" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Conversation Start</a> <a href="#conv_1_turn_0" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Intent Detected</a> <a href="#conv_1_turn_2" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Intent Detected</a> <a href="#conv_1_turn_17" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Successful Resolution</a> <a href="#conv_1_turn_17" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Completed Conversation</a>
+                            <a href="#conv_1_turn_2" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Issue: Misunderstanding</a> <a href="#conv_1_turn_11" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Win: Quick Resolution</a> <a href="#conv_1_turn_14" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Win: Successful Resolution</a>
                         </div>
                     </div>
                     <!-- Sentiment -->
@@ -513,7 +475,7 @@
                         <div class="absolute top-1 left-2 flex items-center text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
                             <i data-lucide="smile" class="w-3 h-3 mr-1"></i> Sentiment
                         </div>
-                        <div class="flex flex-wrap gap-1.5 mt-1"><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>2/18 Trust</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/18 Frustration</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/18 Satisfaction</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>2/18 Gratitude</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div></div>
+                        <div class="flex flex-wrap gap-1.5 mt-1"><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/13 Relieved</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>2/13 Confused</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>2/13 Curious</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/13 Grateful</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div></div>
                     </div>
                     <!-- Goals -->
                     <div class="col-span-1 md:col-span-2 bg-white p-3 rounded border border-slate-200 shadow-sm relative pt-6">
@@ -521,8 +483,8 @@
                             <i data-lucide="shield-check" class="w-3 h-3 mr-1"></i> Goals
                         </div>
                         <div class="flex flex-wrap gap-2 mt-1">
-                            <a href="#conv_1_turn_0" class="px-2 py-1 rounded bg-indigo-600 text-white text-[10px] font-bold shadow-sm hover:bg-indigo-700">★ Bulk-generate QBR decks from CRM data with AI exec summaries and talk tracks</a>
-                            <a href="#conv_1_turn_0" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Create/clone and configure a QBR deck template for APAC Enterprise healthcare segment</a> <a href="#conv_1_turn_2" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Validate via single-account preview to avoid repeat generation failures before scaling to bulk</a>
+                            <a href="#conv_1_turn_0" class="px-2 py-1 rounded bg-indigo-600 text-white text-[10px] font-bold shadow-sm hover:bg-indigo-700">★ Bulk Generate Content</a>
+                            <a href="#conv_1_turn_0" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Generate Presentation</a> <a href="#conv_1_turn_0" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Extract Key Insights</a> <a href="#conv_1_turn_2" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Fix Content Generation Error</a> <a href="#conv_1_turn_5" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Create Template</a>
                         </div>
                     </div>
                 </div>
@@ -543,9 +505,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Gratitude</div>
-                        <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Bulk-generate QBR decks from CRM data with AI exec summaries and talk tracks</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Create/clone and configure a QBR deck template for APAC Enterprise healthcare segment</div>
-                        <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Conversation Start</div> <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Intent Detected</div>
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Curious</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Bulk Generate Content</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Generate Presentation</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Extract Key Insights</div>
                     </div>
                 </div>
             </div>
@@ -564,8 +524,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -583,9 +541,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Frustration</div>
-                        <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Validate via single-account preview to avoid repeat generation failures before scaling to bulk</div>
-                        <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Intent Detected</div>
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Confused</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix Content Generation Error</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Extract Key Insights</div> <div class="px-2 py-0.5 rounded bg-amber-500 text-white text-[9px] font-black uppercase">Issue: Misunderstanding</div>
                     </div>
                 </div>
             </div>
@@ -603,8 +559,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -624,8 +578,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -643,9 +595,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Curious</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Create Template</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Extract Key Insights</div>
                     </div>
                 </div>
             </div>
@@ -663,8 +613,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Trust</div>
-                        
                         
                     </div>
                 </div>
@@ -684,8 +632,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -703,9 +649,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Confused</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Bulk Generate Content</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix Content Generation Error</div>
                     </div>
                 </div>
             </div>
@@ -723,8 +667,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Trust</div>
-                        
                         
                     </div>
                 </div>
@@ -744,8 +686,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -763,9 +703,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Relieved</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix Content Generation Error</div> <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Win: Quick Resolution</div>
                     </div>
                 </div>
             </div>
@@ -783,8 +721,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -804,11 +740,11 @@
                             <span class="text-xs text-slate-400 font-mono">#conv_2</span>
                         </div>
                         <div class="flex gap-3 text-xs text-slate-500 mt-1">
-                            <span class="flex items-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> Tue, Jan 6</span>
+                            <span class="flex items-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> Fri, Jan 9</span>
                             <span class="flex items-center"><i data-lucide="clock" class="w-3 h-3 mr-1"></i> 0 min</span>
-                            <span class="flex items-center"><i data-lucide="message-circle" class="w-3 h-3 mr-1"></i> 25 messages</span>
+                            <span class="flex items-center"><i data-lucide="message-circle" class="w-3 h-3 mr-1"></i> 19 messages</span>
                             <span class="flex items-center text-green-600 font-medium"><i data-lucide="check-circle" class="w-3 h-3 mr-1"></i> Resolved</span>
-                            <span class="flex items-center text-orange-500 font-medium"><i data-lucide="zap" class="w-3 h-3 mr-1"></i> Medium Effort</span>
+                            <span class="flex items-center text-orange-500 font-medium"><i data-lucide="zap" class="w-3 h-3 mr-1"></i> Low Effort</span>
                         </div>
                     </div>
                 </div>
@@ -816,7 +752,7 @@
             </summary>
 
             <div class="p-6 border-t border-slate-100 bg-slate-50/50">
-                <!-- ANALYTICS HEADER (MATCHING IMAGE) -->
+                <!-- ANALYTICS HEADER -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
                     <!-- Events -->
                     <div class="bg-white p-3 rounded border border-slate-200 shadow-sm relative pt-6">
@@ -824,7 +760,7 @@
                             <i data-lucide="clipboard-list" class="w-3 h-3 mr-1"></i> Events
                         </div>
                         <div class="flex flex-wrap gap-1.5 mt-1">
-                            <a href="#conv_2_turn_0" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Conversation Start</a> <a href="#conv_2_turn_0" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Intent Detected</a> <a href="#conv_2_turn_10" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Intent Detected</a> <a href="#conv_2_turn_24" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Successful Resolution</a> <a href="#conv_2_turn_24" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Completed Conversation</a>
+                            <a href="#conv_2_turn_10" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Marker: Quick Resolution</a> <a href="#conv_2_turn_22" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Win: Successful Resolution</a>
                         </div>
                     </div>
                     <!-- Sentiment -->
@@ -832,7 +768,7 @@
                         <div class="absolute top-1 left-2 flex items-center text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
                             <i data-lucide="smile" class="w-3 h-3 mr-1"></i> Sentiment
                         </div>
-                        <div class="flex flex-wrap gap-1.5 mt-1"><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/25 Frustration</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/25 Satisfaction</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>2/25 Informational</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/25 Relief</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/25 Confusion</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/25 Gratitude</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div></div>
+                        <div class="flex flex-wrap gap-1.5 mt-1"><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/19 Relieved</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>3/19 Neutral</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/19 Confused</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/19 Grateful</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/19 Satisfied</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div></div>
                     </div>
                     <!-- Goals -->
                     <div class="col-span-1 md:col-span-2 bg-white p-3 rounded border border-slate-200 shadow-sm relative pt-6">
@@ -840,8 +776,8 @@
                             <i data-lucide="shield-check" class="w-3 h-3 mr-1"></i> Goals
                         </div>
                         <div class="flex flex-wrap gap-2 mt-1">
-                            <a href="#conv_2_turn_0" class="px-2 py-1 rounded bg-indigo-600 text-white text-[10px] font-bold shadow-sm hover:bg-indigo-700">★ Fix content generation error (monthly usage & ROI email pulling wrong metrics)</a>
-                            <a href="#conv_2_turn_16" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Generate an executive summary paragraph focused on adoption and ROI for the board</a> <a href="#conv_2_turn_20" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Save as a reusable monthly board email template</a>
+                            <a href="#conv_2_turn_0" class="px-2 py-1 rounded bg-indigo-600 text-white text-[10px] font-bold shadow-sm hover:bg-indigo-700">★ Fix Content Generation Error</a>
+                            <a href="#conv_2_turn_4" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Connect Data Source</a> <a href="#conv_2_turn_15" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Generate Executive Summary</a> <a href="#conv_2_turn_18" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Create Template</a>
                         </div>
                     </div>
                 </div>
@@ -862,9 +798,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Confusion</div>
-                        <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix content generation error (monthly usage & ROI email pulling wrong metrics)</div>
-                        <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Conversation Start</div> <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Intent Detected</div>
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Confused</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix Content Generation Error</div>
                     </div>
                 </div>
             </div>
@@ -883,8 +817,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -902,9 +834,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Informational</div>
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Neutral</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix Content Generation Error</div>
                     </div>
                 </div>
             </div>
@@ -923,8 +853,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -942,9 +870,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Informational</div>
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Neutral</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Connect Data Source</div>
                     </div>
                 </div>
             </div>
@@ -962,8 +888,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -983,8 +907,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1002,8 +924,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -1023,8 +943,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1043,8 +961,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1062,9 +978,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Relief</div>
-                        
-                        <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Intent Detected</div>
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Relieved</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix Content Generation Error</div> <div class="px-2 py-0.5 rounded bg-slate-500 text-white text-[9px] font-black uppercase">Marker: Quick Resolution</div>
                     </div>
                 </div>
             </div>
@@ -1082,8 +996,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -1103,8 +1015,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1122,8 +1032,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -1143,8 +1051,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1162,9 +1068,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Neutral</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Generate Executive Summary</div>
                     </div>
                 </div>
             </div>
@@ -1182,8 +1086,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Frustration</div>
-                        <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Generate an executive summary paragraph focused on adoption and ROI for the board</div>
                         
                     </div>
                 </div>
@@ -1203,8 +1105,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1222,9 +1122,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Satisfied</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Create Template</div>
                     </div>
                 </div>
             </div>
@@ -1243,11 +1141,11 @@
                             <span class="text-xs text-slate-400 font-mono">#conv_3</span>
                         </div>
                         <div class="flex gap-3 text-xs text-slate-500 mt-1">
-                            <span class="flex items-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> Tue, Jan 6</span>
+                            <span class="flex items-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> Fri, Jan 9</span>
                             <span class="flex items-center"><i data-lucide="clock" class="w-3 h-3 mr-1"></i> 0 min</span>
-                            <span class="flex items-center"><i data-lucide="message-circle" class="w-3 h-3 mr-1"></i> 22 messages</span>
+                            <span class="flex items-center"><i data-lucide="message-circle" class="w-3 h-3 mr-1"></i> 15 messages</span>
                             <span class="flex items-center text-green-600 font-medium"><i data-lucide="check-circle" class="w-3 h-3 mr-1"></i> Resolved</span>
-                            <span class="flex items-center text-orange-500 font-medium"><i data-lucide="zap" class="w-3 h-3 mr-1"></i> Low Effort</span>
+                            <span class="flex items-center text-orange-500 font-medium"><i data-lucide="zap" class="w-3 h-3 mr-1"></i> Medium Effort</span>
                         </div>
                     </div>
                 </div>
@@ -1255,7 +1153,7 @@
             </summary>
 
             <div class="p-6 border-t border-slate-100 bg-slate-50/50">
-                <!-- ANALYTICS HEADER (MATCHING IMAGE) -->
+                <!-- ANALYTICS HEADER -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
                     <!-- Events -->
                     <div class="bg-white p-3 rounded border border-slate-200 shadow-sm relative pt-6">
@@ -1263,7 +1161,7 @@
                             <i data-lucide="clipboard-list" class="w-3 h-3 mr-1"></i> Events
                         </div>
                         <div class="flex flex-wrap gap-1.5 mt-1">
-                            <a href="#conv_3_turn_0" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Conversation Start</a> <a href="#conv_3_turn_0" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Intent Detected</a> <a href="#conv_3_turn_5" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Unresolved</a> <a href="#conv_3_turn_17" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Successful Resolution</a> <a href="#conv_3_turn_21" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Completed Conversation</a>
+                            <a href="#conv_3_turn_6" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Issue: Misunderstanding</a> <a href="#conv_3_turn_16" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Win: Successful Resolution</a> <a href="#conv_3_turn_16" class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-700 border border-green-100 hover:bg-green-100 transition-colors">Marker: Quick Resolution</a>
                         </div>
                     </div>
                     <!-- Sentiment -->
@@ -1271,7 +1169,7 @@
                         <div class="absolute top-1 left-2 flex items-center text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
                             <i data-lucide="smile" class="w-3 h-3 mr-1"></i> Sentiment
                         </div>
-                        <div class="flex flex-wrap gap-1.5 mt-1"><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/22 Frustration</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/22 Satisfaction</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>2/22 Informational</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div></div>
+                        <div class="flex flex-wrap gap-1.5 mt-1"><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/15 Frustrated</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/15 Confused</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/15 Curious</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div><div class="flex items-center text-[10px] bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100"><span>1/15 Satisfied</span><i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i></div></div>
                     </div>
                     <!-- Goals -->
                     <div class="col-span-1 md:col-span-2 bg-white p-3 rounded border border-slate-200 shadow-sm relative pt-6">
@@ -1279,8 +1177,8 @@
                             <i data-lucide="shield-check" class="w-3 h-3 mr-1"></i> Goals
                         </div>
                         <div class="flex flex-wrap gap-2 mt-1">
-                            <a href="#conv_3_turn_0" class="px-2 py-1 rounded bg-indigo-600 text-white text-[10px] font-bold shadow-sm hover:bg-indigo-700">★ Generate a trend/insights narrative PDF using the Renewal Health Check template (quickly for execs)</a>
-                            <a href="#conv_3_turn_0" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Connect Salesforce as a new CRM data source in Matik</a> <a href="#conv_3_turn_18" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Schedule internal-only monthly report generation so PDFs are ready to download</a>
+                            <a href="#conv_3_turn_0" class="px-2 py-1 rounded bg-indigo-600 text-white text-[10px] font-bold shadow-sm hover:bg-indigo-700">★ Generate Document</a>
+                            <a href="#conv_3_turn_0" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Connect Data Source</a> <a href="#conv_3_turn_2" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Find Template or Content</a> <a href="#conv_3_turn_6" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Fix Data or Integration Issue</a> <a href="#conv_3_turn_16" class="px-2 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-bold hover:bg-indigo-100">Schedule Automated Generation</a>
                         </div>
                     </div>
                 </div>
@@ -1301,9 +1199,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Informational</div>
-                        <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Generate a trend/insights narrative PDF using the Renewal Health Check template (quickly for execs)</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Connect Salesforce as a new CRM data source in Matik</div>
-                        <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Conversation Start</div> <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Intent Detected</div>
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Curious</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Connect Data Source</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Generate Document</div>
                     </div>
                 </div>
             </div>
@@ -1322,8 +1218,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1341,9 +1235,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Informational</div>
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Confused</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Connect Data Source</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Find Template or Content</div>
                     </div>
                 </div>
             </div>
@@ -1361,8 +1253,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -1382,8 +1272,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1402,8 +1290,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        <div class="px-2 py-0.5 rounded bg-emerald-500 text-white text-[9px] font-black uppercase">Event: Unresolved</div>
                     </div>
                 </div>
             </div>
@@ -1421,9 +1307,7 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Frustration</div>
-                        
-                        
+                        <div class="px-2 py-0.5 rounded bg-red-400 text-white text-[9px] font-black uppercase">Sentiment: Frustrated</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Generate Document</div> <div class="px-2 py-0.5 rounded bg-indigo-500 text-white text-[9px] font-black uppercase">Goal: Fix Data or Integration Issue</div> <div class="px-2 py-0.5 rounded bg-amber-500 text-white text-[9px] font-black uppercase">Issue: Misunderstanding</div>
                     </div>
                 </div>
             </div>
@@ -1441,8 +1325,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -1462,8 +1344,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1481,8 +1361,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -1502,8 +1380,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1521,8 +1397,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -1542,8 +1416,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1561,8 +1433,6 @@
                     
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
-                        
-                        
                         
                     </div>
                 </div>
@@ -1582,8 +1452,6 @@
                     <!-- Indicators appearing inside bubble -->
                     <div class="mt-3 flex flex-wrap gap-1.5">
                         
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -1602,6 +1470,8 @@
                     e.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
                     const targetElement = document.getElementById(targetId);
+                    if (!targetElement) return;
+                    
                     const details = targetElement.closest('details');
                     
                     if (details) {{
